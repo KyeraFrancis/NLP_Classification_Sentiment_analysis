@@ -15,6 +15,16 @@ def load_request_creds():
     """
     Function Definition:
     This function is responsible for initial request of the Reddit API credentials. On the initial run it will prompt the user to enter the required credentials and then will store it in a JSON file for future use.
+
+    Parameters:
+    None
+
+    Returns:
+    - A dictionary containing the Reddit API credentials.
+
+    Output:
+    - A JSON file containing the Reddit API credentials.
+
     """
 
     config_path = "config.json"
@@ -60,7 +70,10 @@ def get_access_token(creds):  # Ref: Breakfast Hour 6_week_wed
     - creds: Dictionary containing the Reddit API credentials.
 
     Returns:
-    - The access token as a string.
+    - The access token.
+
+    Output:
+    - A JSON file containing the Access Token.
     """
 
     auth = requests.auth.HTTPBasicAuth(creds["client_id"], creds["client_secret"])
@@ -101,6 +114,9 @@ def retrieve_posts(creds, subreddit, after):
 
     Returns:
     - A list of posts from the subreddit.
+
+    Output:
+    - A JSON file containing the posts from the subreddit.
     """
     base_url = "https://oauth.reddit.com/r/"
 
@@ -121,9 +137,19 @@ def retrieve_posts(creds, subreddit, after):
 
 def main():
     """
-    Main function to conduct the Reddit data collection process.
+    Function Definition:
+    To conduct the Reddit data collection process.
     It loads the user credentials, iterates through subreddits,
     retrieves posts, avoiding the duplicates, and saves the collected data.
+
+    Parameters:
+    None
+
+    Returns:
+    - A list of posts from the subreddit.
+
+    Output:
+    - A CSV file containing the collected data.
     """
     # Load Reddit API credentials
     creds = load_request_creds()
@@ -145,24 +171,24 @@ def main():
         # Fetches posts from the current subreddit using the retrieve_posts function
         posts = retrieve_posts(creds, subreddit, after)
 
-        # Process each fetched post
+        # Processes each fetched post
         for post in posts:
-            # Extract the post data
+            # Extracts the post data
             post_data = post["data"]
-            # Add the subreddit name to the post data
+            # Adds the subreddit name to the post data
             post_data["subreddit"] = subreddit
 
-            # Check if the post is a duplicate and add it to the all_posts list if it's not
+            # Checks if the post is a duplicate and adds it to the all_posts list if it's not
             if post_data["id"] not in [p["id"] for p in all_posts]:
                 all_posts.append(post_data)
 
         # Updates the 'after' ID for the current subreddit for the next iteration
         after_ids[subreddit] = posts[-1]["data"]["name"] if posts else None
 
-    # Convert the list of posts into a DataFrame
+    # Converts the list of posts into a DataFrame
     df = pd.DataFrame(all_posts)
 
-    # Save the DataFrame to a CSV file in the specified directory
+    # Saves the DataFrame to a CSV file in the specified directory
     df.to_csv(
         f"../1_DATA_COLLECTION/data/reddit_data_{datetime.now().strftime('%Y-%m-%d')}.csv",
         index=False,
