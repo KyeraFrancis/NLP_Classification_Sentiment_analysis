@@ -1,0 +1,6 @@
+1. Project Scope and Objectives: What are the primary goals of the project? Is it mainly focused on determining the morale of 'army' and 'usmc' subreddit members, or does it also aim to understand mental health discussions in 'schizophrenic' and 'bipolar' subreddits?
+2. Key Findings: What are the most significant findings or insights from your analysis? For instance, did you discover notable trends or sentiments within these subreddits?
+3. Methodology: What specific NLP techniques and models were used in the classification and sentiment analysis? This helps in understanding the robustness of your approach.
+4. Impact and Recommendations: What are the potential impacts of your findings, and what recommendations would you make based on these insights?
+5. Target Audience: Who is the intended audience for the executive summary? Is it for academic purposes, military analysts, mental health professionals, or a general audience?
+6. Limitations and Future Work: Were there any notable limitations in your study, and what future directions do you suggest for this research?
