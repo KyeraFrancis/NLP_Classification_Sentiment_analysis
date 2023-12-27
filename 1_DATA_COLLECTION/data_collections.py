@@ -40,7 +40,7 @@ def load_request_creds():
         username = input("Please enter your username: ")
         password = getpass.getpass("Please enter your password: ")
         subreddits = input(
-            "Please enter the subreddits you would like to scrape (separated by commas): "
+            "Please enter the subreddits you would like to scrape (separated by commas no spaces; ie: Army,Navy,USMC): "
         )
         # Store the creds in a dictionary
         creds = {
