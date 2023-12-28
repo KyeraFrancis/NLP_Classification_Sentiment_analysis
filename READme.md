@@ -6,7 +6,8 @@ This project aims to develop a classification model that leverages Natural Langu
 
 ### Goal
 
-The goal is to understand the morale among 'usmc' and 'army' subreddit members and to gauge the general state of the armed forces. Additionally, a comparative analysis of sentiment in 'schizophrenic' vs 'bipolar' subreddits will be conducted.
+The primary objective is to create an advanced model capable of analyzing and classifying posts with high accuracy, ensuring that each post is appropriately categorized even when presented with closely related category options.
+The secondary goal is to understand the morale/sentiment among 'usmc' and 'army' subreddit members and to gauge the general state of the armed forces. Additionally, a comparative analysis of sentiment in 'schizophrenic' vs 'bipolar' subreddits will be conducted.
 
 ## Data Science Process
 
