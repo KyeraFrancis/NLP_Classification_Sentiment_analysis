@@ -14,7 +14,9 @@ import os
 def load_request_creds():
     """
     Function Definition:
-    This function is responsible for initial request of the Reddit API credentials. On the initial run it will prompt the user to enter the required credentials and then will store it in a JSON file for future use.
+    This function is responsible for initial request of the Reddit API credentials.
+    On the initial run it will prompt the user to enter the required credentials
+    and then will store it in a JSON file for future use.
 
     Parameters:
     None
@@ -42,7 +44,7 @@ def load_request_creds():
         subreddits = input(
             "Please enter the subreddits you would like to scrape (separated by commas no spaces; ie: Army,Navy,USMC): "
         )
-        # Store the creds in a dictionary
+        # Stores the creds in a dictionary
         creds = {
             "client_id": client_id,
             "client_secret": client_secret,
@@ -51,7 +53,7 @@ def load_request_creds():
             "password": password,
             "subreddits": subreddits,
         }
-        # Store the creds in a JSON file
+        # Stores the creds in a JSON file
         with open(config_path, "w+") as file:
             json.dump(creds, file)
 
@@ -105,7 +107,7 @@ def get_access_token(creds):  # Ref: Breakfast Hour 6_week_wed
 def retrieve_posts(creds, subreddit, after):
     """
     Function Definition:
-    Retrieves posts from multiple subreddits using Reddit's API.
+    Retrieves posts from single or multiple subreddits using Reddit's API.
 
     Parameters:
     - creds: Dictionary containing the API credentials.
@@ -125,7 +127,11 @@ def retrieve_posts(creds, subreddit, after):
         "Authorization": f"bearer {get_access_token(creds)}",
     }
 
-    params = {"limit": 100, "after": after, "t": "day"}  # Fetch posts from the last day
+    params = {
+        "limit": 100,
+        "after": after,
+        "t": "day",
+    }  # Fetches posts from the last day
 
     res = requests.get(f"{base_url}{subreddit}/new", headers=headers, params=params)
     if res.status_code == 200:
@@ -151,7 +157,7 @@ def main():
     Output:
     - A CSV file containing the collected data.
     """
-    # Load Reddit API credentials
+    # Loads Reddit API credentials
     creds = load_request_creds()
 
     # Creates a dictionary to keep track of the last fetched post from each subreddit
@@ -162,7 +168,7 @@ def main():
 
     # Iterates through each subreddit identified in the credentials
     for subreddit in creds["subreddits"].split(","):
-        # Show a message to the user indicating which subreddit is being fetched
+        # Shows a message to the user indicating which subreddit is being fetched
         print(f"Fetching posts from r/{subreddit}")
 
         # Retrieves the 'after' ID for the current subreddit to handle pagination
