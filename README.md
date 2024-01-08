@@ -2,7 +2,7 @@
 
 ## Bottom Line Up Front (BLUF)
 
-This project aims to develop a classification model that leverages Natural Language Processing (NLP) to accurately categorize Reddit posts into specific subreddits., then gauge the sentiment of each group. The primary focus is on military-related subreddits such as United States Army ('army') and United States Marine Corps ('usmc'), along with mental health-related subreddits like 'schizophrenic' and 'bipolar'. [Introduction](#introduction)
+This project aims to develop a classification model that leverages Natural Language Processing (NLP) to accurately categorize Reddit posts into specific subreddits., then gauge the sentiment of each group. The primary focus is on military-related subreddits such as United States Army ('army') and United States Marine Corps ('usmc'), along with mental health-related subreddits like 'schizophrenia' and 'bipolar'. [Introduction](#introduction)
 
 ### [Goals](#objectives)
 
@@ -138,7 +138,7 @@ Utilizing sentiment analysis algorithms to determine the prevailing emotional to
 
 ## Sentiment Analysis:
 
-- The sentiment analysis was conducted using the VADER Sentiment Analyzer.
+- The sentiment analysis was conducted using the BERT and TextBlob Sentiment Analyzers.
 - Compared the sentiments between grouped subreddits ('army' vs 'usmc' and 'schizophrenic' vs 'bipolar').
 
 ### Word Cloud Generation

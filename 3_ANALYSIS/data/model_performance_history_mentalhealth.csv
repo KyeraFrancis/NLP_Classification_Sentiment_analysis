@@ -1,11 +1,16 @@
-Model,2024-01-05_Score,2024-01-05_Params,2024-01-06_Score,2024-01-06_Params
-Gradient Boosting,,,0.8566906975273509,"{'learning_rate': 0.2, 'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 4, 'n_estimators': 300}"
-Logistic Regression,,,0.8495193827863151,"{'C': 1, 'class_weight': 'balanced', 'max_iter': 100, 'multi_class': 'multinomial', 'n_jobs': -1, 'penalty': 'l2', 'random_state': 42, 'solver': 'newton-cg'}"
-Random Forest,,,0.8455448049073547,"{'max_depth': None, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 200}"
-Multinomial Naive Bayes,,,0.8112976664769495,"{'alpha': 0.1, 'class_prior': None, 'fit_prior': False}"
-KNN,,,0.5588945804085246,"{'metric': 'euclidean', 'n_neighbors': 1, 'weights': 'uniform'}"
-Gradient Boosting,0.846351931330472,"{'learning_rate': 0.1, 'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 4, 'n_estimators': 300}",,
-Logistic Regression,0.8437768240343347,"{'C': 0.1, 'class_weight': 'balanced', 'max_iter': 100, 'multi_class': 'auto', 'n_jobs': -1, 'penalty': None, 'random_state': 42, 'solver': 'lbfgs'}",,
-Random Forest,0.8334763948497855,"{'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 200}",,
-Multinomial Naive Bayes,0.7965665236051502,"{'alpha': 0.1, 'class_prior': None, 'fit_prior': False}",,
-KNN,0.4454935622317597,"{'metric': 'euclidean', 'n_neighbors': 2, 'weights': 'uniform'}",,
+Model,2024-01-05_Score,2024-01-05_Params,2024-01-06_Score,2024-01-06_Params,2024-01-07_Score,2024-01-07_Params
+Gradient Boosting,,,,,0.8603143364766981,"{'learning_rate': 0.2, 'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 4, 'n_estimators': 100}"
+Logistic Regression,,,,,0.8440453737870712,"{'C': 0.1, 'class_weight': 'balanced', 'max_iter': 100, 'multi_class': 'auto', 'n_jobs': -1, 'penalty': None, 'random_state': 42, 'solver': 'lbfgs'}"
+Random Forest,,,,,0.8403799371327046,"{'max_depth': 30, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}"
+Multinomial Naive Bayes,,,,,0.8100451004510045,"{'alpha': 0.1, 'class_prior': None, 'fit_prior': False}"
+KNN,,,,,0.4301517015170152,"{'metric': 'euclidean', 'n_neighbors': 2, 'weights': 'uniform'}"
+Gradient Boosting,,,0.8566906975273509,"{'learning_rate': 0.2, 'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 4, 'n_estimators': 300}",,
+Logistic Regression,,,0.8495193827863151,"{'C': 1, 'class_weight': 'balanced', 'max_iter': 100, 'multi_class': 'multinomial', 'n_jobs': -1, 'penalty': 'l2', 'random_state': 42, 'solver': 'newton-cg'}",,
+Random Forest,,,0.8455448049073547,"{'max_depth': None, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 200}",,
+Multinomial Naive Bayes,,,0.8112976664769495,"{'alpha': 0.1, 'class_prior': None, 'fit_prior': False}",,
+KNN,,,0.5588945804085246,"{'metric': 'euclidean', 'n_neighbors': 1, 'weights': 'uniform'}",,
+Gradient Boosting,0.846351931330472,"{'learning_rate': 0.1, 'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 4, 'n_estimators': 300}",,,,
+Logistic Regression,0.8437768240343347,"{'C': 0.1, 'class_weight': 'balanced', 'max_iter': 100, 'multi_class': 'auto', 'n_jobs': -1, 'penalty': None, 'random_state': 42, 'solver': 'lbfgs'}",,,,
+Random Forest,0.8334763948497855,"{'max_depth': 20, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 200}",,,,
+Multinomial Naive Bayes,0.7965665236051502,"{'alpha': 0.1, 'class_prior': None, 'fit_prior': False}",,,,
+KNN,0.4454935622317597,"{'metric': 'euclidean', 'n_neighbors': 2, 'weights': 'uniform'}",,,,
