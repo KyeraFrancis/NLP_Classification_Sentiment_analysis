@@ -20,8 +20,8 @@
     - MultinomialNB, 
     - RandomForestClassifier, 
     - GradientBoostingClassifier, 
+    - KNeighborsClassifier,
     - GridSearchCV, 
-    - Pipeline, 
     - WordCloud, 
     - TextBlob, 
     - and BertTokenizer.

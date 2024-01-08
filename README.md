@@ -108,10 +108,158 @@ Utilizing sentiment analysis algorithms to determine the prevailing emotional to
 - Used the best model to predict the subreddit category for the test data, and analyzed the results.
 - The words with the highest and lowest coefficients were analyzed from the best model in order to evaluate the group's morale and sentiment.
 
-### 5. Conclusion and Recommendations [TODO]
+### 5. Conclusion and Recommendations
 
-- Summarize key findings.
-- Provide recommendations based on the study's outcomes.
+- Best model: TD-IDF Vectorizer with Gradient Boosting Classifier
+1. Military: 
+
+    ![Confusion Matrix](./4_CONCLUSIONS_VIZ/imgs/best_gb.png)
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precision</th>
+      <th>recall</th>
+      <th>f1-score</th>
+      <th>support</th>
+    </tr>
+    <tr>
+      <th>Class</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Army</th>
+      <td>0.81</td>
+      <td>0.98</td>
+      <td>0.88</td>
+      <td>253.0</td>
+    </tr>
+    <tr>
+      <th>USMC</th>
+      <td>0.86</td>
+      <td>0.33</td>
+      <td>0.48</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>accuracy</th>
+      <td></td>
+      <td></td>
+      <td>0.81</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>macro avg</th>
+      <td>0.83</td>
+      <td>0.66</td>
+      <td>0.68</td>
+      <td>343.0</td>
+    </tr>
+    <tr>
+      <th>weighted avg</th>
+      <td>0.82</td>
+      <td>0.81</td>
+      <td>0.78</td>
+      <td>343.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+2. Mental Health:
+
+    ![Confusion Matrix Mental Health](./4_CONCLUSIONS_VIZ/imgs/mh_best_gb.png)
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precision</th>
+      <th>recall</th>
+      <th>f1-score</th>
+      <th>support</th>
+    </tr>
+    <tr>
+      <th>Class</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>bipolar</th>
+      <td>0.78</td>
+      <td>0.91</td>
+      <td>0.84</td>
+      <td>175.0</td>
+    </tr>
+    <tr>
+      <th>schizophrenia</th>
+      <td>0.88</td>
+      <td>0.73</td>
+      <td>0.80</td>
+      <td>164.0</td>
+    </tr>
+    <tr>
+      <th>accuracy</th>
+      <td></td>
+      <td></td>
+      <td>0.82</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>macro avg</th>
+      <td>0.83</td>
+      <td>0.82</td>
+      <td>0.82</td>
+      <td>339.0</td>
+    </tr>
+    <tr>
+      <th>weighted avg</th>
+      <td>0.83</td>
+      <td>0.82</td>
+      <td>0.82</td>
+      <td>339.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+- These models are performing well and improving with each iteration. The model should be retrained with the new data to determine if the performance has improved.
 
 <br>
 <br>
@@ -119,39 +267,47 @@ Utilizing sentiment analysis algorithms to determine the prevailing emotional to
 # Outcomes:
 
 ## NLP Analysis:
-- Military: `Logistic Regression`, The similarities of the posts during this season may have affected the results. The data collection process should be repeated during a different time of year to determine if the results are consistent.
-- Mental Health: `Gradient Boosting`, Although these groups have an appearance of similarity, the model was able to distinguish between them with a higher accuracy than that of similar military groups.
+- Military: `TD-IDF + Gradient Boosting`, The similarities of the posts during this season may have affected the results. The data collection process should be repeated during a different time of year to determine if the results are consistent.
+- Mental Health: `TD-IDF + Gradient Boosting`, Although these groups have an appearance of similarity, the model was able to distinguish between them with a higher accuracy than that of similar military groups, but at a slower learning rate.
 
 ### Classification Report and Confusion Matrix
 
-- Military: `Logistic Regression`,
+- Military: `TD-IDF + Gradient Boosting`,
 
-[Classification Report](./images/military_logreg_classification_report.png)
+[Classification Report](./4_CONCLUSIONS_VIZ/files/classification_report_best_gb.csv)
 
-[Confusion Matrix](./images/military_logreg_confusion_matrix.png)
+[Confusion Matrix](./4_CONCLUSIONS_VIZ/imgs/best_gb.png)
 
-- Mental Health: `Gradient Boosting`
+- Mental Health: `TD- IDF + Gradient Boosting`
 
-[Classification Report](./images/mental_health_gb_classification_report.png)
+[Classification Report](./4_CONCLUSIONS_VIZ/files/classification_report_best_gb_mh.csv)
 
-[Confusion Matrix](./images/mental_health_gb_confusion_matrix.png)
+[Confusion Matrix](./4_CONCLUSIONS_VIZ/imgs/mh_best_gb.png)
 
 ## Sentiment Analysis:
 
-- The sentiment analysis was conducted using the BERT and TextBlob Sentiment Analyzers.
-- Compared the sentiments between grouped subreddits ('army' vs 'usmc' and 'schizophrenic' vs 'bipolar').
+- The sentiment analysis was conducted using the TextBlob Sentiment Analyzers.
+- Compared the sentiments amongst each grouped subreddits.
 
 ### Word Cloud Generation
 
-- a.  **[input word clouds, and sentiment analysis for Army]**
-- b.  **[input word clouds, and sentiment analysis for USMC]**
-- c.  **[input word clouds, and sentiment analysis for Schizophrenia]**
-- d.  **[input word clouds, and sentiment analysis for Bipolar]**
+- a. Army: Word Clouds and Sentiment Analysis
+    - ![Army Word Cloud](./4_CONCLUSIONS_VIZ/imgs/army_wordcloud.png) 
+    - ![Army Sentiment](./4_CONCLUSIONS_VIZ/imgs/army_sent_bar.png)
+- b.  USMC: Word Clouds and Sentiment Analysis
+    - ![USMC Word Cloud](./4_CONCLUSIONS_VIZ/imgs/usmc_wordcloud.png)
+    - ![USMC Sentiment](./4_CONCLUSIONS_VIZ/imgs/usmc_sent_bar.png)
+- c.  Schizophrenia: Word Clouds and Sentiment Analysis
+    - ![Schizophrenia Word Cloud](./4_CONCLUSIONS_VIZ/imgs/schizophrenia_wordcloud.png)
+    - ![Schizophrenia Sentiment](./4_CONCLUSIONS_VIZ/imgs/schizo_sent_bar.png)
+- d.  Bipolar: Word Clouds and Sentiment Analysis
+    - ![Bipolar Word Cloud](./4_CONCLUSIONS_VIZ/imgs/bipolar_wordcloud.png)
+    - ![Bipolar Sentiment](./4_CONCLUSIONS_VIZ/imgs/bipo_sent_bar.png)
 
 # Final Thoughts
 Improvements:
 - The data collection began during the holiday season, which may have affected the results. The data collection process should be repeated during a different time of year to determine if the results are consistent. 
-- The data colelction record keeping process should be improved to ensure that the data is collected consistently and accurately. Capturing the results of each iteration of the models would be beneficial for future analysis.
+- The data collection record keeping process should be improved to ensure that the data is collected consistently and accurately. Capturing the results of each iteration of the models would be beneficial for future analysis.
 - Each iteration has seen an improvement in the model's performance. The model should be retrained with the new data to determine if the performance has improved.
 
 Findings and Further Applications:
