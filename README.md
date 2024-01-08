@@ -115,7 +115,7 @@ Utilizing sentiment analysis algorithms to determine the prevailing emotional to
 
     ![Confusion Matrix](./4_CONCLUSIONS_VIZ/imgs/best_gb.png)
     <div>
-<style scoped>
+#<style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -189,7 +189,7 @@ Utilizing sentiment analysis algorithms to determine the prevailing emotional to
 
     ![Confusion Matrix Mental Health](./4_CONCLUSIONS_VIZ/imgs/mh_best_gb.png)
     <div>
-<style scoped>
+#<style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
